@@ -43,12 +43,12 @@ public class Teat {
             bugFound("test4");
         }
         try {
-            //test5();
+            test5();
         } catch (Exception e) {
             bugFound("test5");
         }
         try {
-            //test6();
+            test6();
         } catch (Exception e) {
             bugFound("test6");
         }
@@ -169,7 +169,7 @@ public class Teat {
             grade -= 8;
         }
         try {
-            //test30();
+            test30();
         } catch (Exception e) {
             System.out.println("Bug found in " + "test30");
             grade -= 8;
@@ -371,6 +371,7 @@ public class Teat {
     }
 
     static void test8() {
+        System.out.println("888888888888");
         String test = "test8";
         heap = new Heap();
         fibonacciHeap = new FibonacciHeap();
@@ -406,6 +407,7 @@ public class Teat {
     }
 
     static void test9() {
+        System.out.println("99999999999");
         String test = "test9";
         heap = new Heap();
         fibonacciHeap = new FibonacciHeap();
@@ -441,6 +443,7 @@ public class Teat {
     }
 
     static void test10() {
+        System.out.println("10000000");
         String test = "test10";
         heap = new Heap();
         fibonacciHeap = new FibonacciHeap();
@@ -479,6 +482,7 @@ public class Teat {
     }
 
     static void test11() {
+        System.out.println("11");
         String test = "test11";
         fibonacciHeap = new FibonacciHeap();
         addKeys(1000);
@@ -504,6 +508,7 @@ public class Teat {
     }
 
     static void test12() {
+        System.out.println("12");
         String test = "test12";
         fibonacciHeap = new FibonacciHeap();
         addKeys(1000);
@@ -532,6 +537,7 @@ public class Teat {
     }
 
     static void test13() {
+        System.out.println("13");
         String test = "test13";
         fibonacciHeap = new FibonacciHeap();
         addKeys(1000);
@@ -556,6 +562,7 @@ public class Teat {
     }
 
     static void test14() {
+        System.out.println("14");
         String test = "test14";
         fibonacciHeap = new FibonacciHeap();
         addKeys(1000);
@@ -590,6 +597,7 @@ public class Teat {
 
 
     static void test15() {
+        System.out.println("15");
         String test = "test15";
         fibonacciHeap = new FibonacciHeap();
 
@@ -621,6 +629,7 @@ public class Teat {
     }
 
     static void test16() {
+        System.out.println("16");
         String test = "test16";
         fibonacciHeap = new FibonacciHeap();
 
@@ -639,6 +648,7 @@ public class Teat {
     }
 
     static void test17() {
+        System.out.println("17");
         String test = "test17";
         fibonacciHeap = new FibonacciHeap();
 
@@ -659,6 +669,7 @@ public class Teat {
     }
 
     static void test18() {
+        System.out.println("18");
         String test = "test18";
         fibonacciHeap = new FibonacciHeap();
 
@@ -688,6 +699,7 @@ public class Teat {
     }
 
     static void test19() {
+        System.out.println("19");
         String test = "test19";
         fibonacciHeap = new FibonacciHeap();
 
@@ -716,6 +728,7 @@ public class Teat {
     }
 
     static void test20() {
+        System.out.println("20");
         String test = "test20";
         fibonacciHeap = new FibonacciHeap();
 
@@ -746,6 +759,7 @@ public class Teat {
     }
 
     static void test21() {
+        System.out.println("21");
         String test = "test21";
         fibonacciHeap = new FibonacciHeap();
 
@@ -772,6 +786,7 @@ public class Teat {
     }
 
     static void test22() {
+        System.out.println("22");
         String test = "test22";
         fibonacciHeap = new FibonacciHeap();
 
@@ -822,6 +837,7 @@ public class Teat {
     }
 
     static void test23() {
+        System.out.println("23");
         String test = "test23";
         fibonacciHeap = new FibonacciHeap();
 
@@ -840,6 +856,7 @@ public class Teat {
     }
 
     static void test24() {
+        System.out.println("24");
         String test = "test24";
         fibonacciHeap = new FibonacciHeap();
 
@@ -858,6 +875,7 @@ public class Teat {
     }
 
     static void test25() {
+        System.out.println("25");
         String test = "test25";
         fibonacciHeap = new FibonacciHeap();
 
@@ -876,6 +894,7 @@ public class Teat {
     }
 
     static void test26() {
+        System.out.println("26");
         String test = "test26";
         fibonacciHeap = new FibonacciHeap();
 
@@ -902,6 +921,7 @@ public class Teat {
     }
 
     static void test27() {
+        System.out.println("27");
         String test = "test27";
         fibonacciHeap = new FibonacciHeap();
 
@@ -928,6 +948,7 @@ public class Teat {
     }
 
     static void test28() {
+        System.out.println("28");
         String test = "test28";
         fibonacciHeap = new FibonacciHeap();
 
@@ -955,6 +976,7 @@ public class Teat {
 
 
     static void test29() {
+        System.out.println("29");
         /* kMin */
         fibonacciHeap = new FibonacciHeap();
         for (int i = 0; i < 33; i++) {
@@ -971,6 +993,7 @@ public class Teat {
     }
 
     static void test30() {
+        System.out.println("30");
         /* insert and meld */
         FibonacciHeap firstFibonacciHeap = new FibonacciHeap();
         FibonacciHeap secondFibonacciHeap = new FibonacciHeap();

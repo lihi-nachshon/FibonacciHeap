@@ -11,7 +11,6 @@ public class FibonacciHeap {
     private int numTrees;
     private static int totalLinks;
     private static int totalCuts;
-    private static final Integer INF = Integer.MAX_VALUE;
    /**
     * public boolean isEmpty()
     *
@@ -111,7 +110,6 @@ public class FibonacciHeap {
      	HeapNode node = this.first;
         int n = numTrees;
         for(int i = 0; i < n; i++){
-
                 HeapNode next = node.next;
                 int r = node.rank;
                 if(rankArr[r] == null){
@@ -200,8 +198,9 @@ public class FibonacciHeap {
         int LOG_PHY = (int)Math.floor(Math.log((double)this.size + 1)/Math.log((1+Math.sqrt(5))/2));
     	int[] arr = new int[LOG_PHY];
         HeapNode node = this.first;
-        while(node != null){
+        for(int i = 0; i < numTrees; i++){
             arr[node.rank] += 1;
+            node = node.next;
         }
         return arr;
     }
@@ -215,7 +214,8 @@ public class FibonacciHeap {
     * Time Complexity amortized O(logn)
     */
     public void delete(HeapNode x){
-    	this.decreaseKey(x, INF);
+        int delta = x.key - this.min.key + 1;
+    	this.decreaseKey(x, delta);
         this.deleteMin();
     }
 
@@ -227,6 +227,12 @@ public class FibonacciHeap {
     */
     public void decreaseKey(HeapNode x, int delta){
     	x.key -= delta;
+        if(x.parent == null){
+            if(this.min.key > x.key){
+                this.min = x;
+            }
+            return;
+        }
         if(x.parent.key < x.key) {
             return;
         }
@@ -295,16 +301,18 @@ public class FibonacciHeap {
         int[] arr = new int[k];
         FibonacciHeap helper = new FibonacciHeap();
         HeapNode copyMin = helper.insert(H.min.key);
-        copyMin.info = H.min.child;
+        copyMin.info = H.min;
         for(int i = 0; i < k - 1; i++){
             HeapNode minNode = helper.min;
             arr[i] = minNode.key;
-            HeapNode nodeChild = minNode.info;
-            while(nodeChild != null){
+            HeapNode nodeChild = minNode.info.child;
+            int minRank = minNode.info.rank;
+            for(int j = 0; j < minRank; j++){
                 HeapNode copyNode = helper.insert(nodeChild.key);
                 copyNode.info = nodeChild.child;
                 nodeChild = nodeChild.next;
             }
+
             helper.deleteMin();
         }
         return arr;
@@ -384,7 +392,7 @@ public class FibonacciHeap {
     public void cascadingCut(HeapNode x, HeapNode y){
         this.cut(x, y);
         if(y.parent != null){
-            if(y.mark == false){
+            if(!y.mark){
                 y.mark = true;
                 marked++;
             }
